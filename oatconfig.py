@@ -88,32 +88,13 @@ else: print('Could not set site date...')
 # Set UTC Offset
 #///////////////////////////////////
 
-ts = time.time()
-utc_offset = (datetime.fromtimestamp(ts) -
-              datetime.utcfromtimestamp(ts)).total_seconds()
-
-utc_offset_hour = int(utc_offset / 3600)
-
-if  utc_offset_hour > 0:
-    utc_offset_hour_str = str(utc_offset_hour)
-    utc_offset_hour_zero = utc_offset_hour_str.zfill(2)
-    utc_offset_hour_sign = '+' + str(utc_offset_hour_zero)
-elif  utc_offset_hour < 0:
-    utc_offset_hour_str = str(abs(utc_offset_hour))
-    utc_offset_hour_zero = utc_offset_hour_str.zfill(2)
-    utc_offset_hour_sign = '-' + str(utc_offset_hour_zero)
-else:
-    utc_offset_hour_sign = str('+00')
-
-
-ser.write(str.encode(':SG' + str(utc_offset_hour_sign) + '#'))
+ser.write(str.encode(':SG+06#'))
 response = ser.readline()
 response_utf = (response.decode('utf-8'))
 if int(response_utf) == 1:
-    print('Site UTC offset successfully set to: ' + str(utc_offset_hour_sign))
+    print('Site UTC offset successfully set to: +06 ')
 else: print('Could not set UTC offset...')
-#print("Current UTC offset =", utc_offset_hour_sign)
-
+    
 
 #////////////////////////////////////
 # Set current position as Home
