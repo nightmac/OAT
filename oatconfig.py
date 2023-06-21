@@ -31,20 +31,17 @@ if (response_utf) == ('') :
 
 else:  print(str(response_utf) + ' is online!') 
 
+
 #////////////////////////////////////
 # Set site coordinates
 #///////////////////////////////////
 
-print("Home Site LAT is 38*34")     # Show your Home Latitude in DM (DegreesMinutes) format
-print("Home Site LONG is +90*33")    # Show your Home Longitude
 
 ser.write(str.encode(':St38*34#'))
-response = ser.readline()
-response_utf = (response.decode('utf-8'))
-
 ser.write(str.encode(':Sg+90*33#'))
-response = ser.readline()
-response_utf = (response.decode('utf-8'))
+
+print("Home Site LAT is 38*34")     # Show your Home Latitude in DM (DegreesMinutes) format
+print("Home Site LONG is +90*33")    # Show your Home Longitude
 
 
 #////////////////////////////////////
@@ -54,7 +51,6 @@ response_utf = (response.decode('utf-8'))
 now = datetime.now()
 
 current_time = now.strftime("%H:%M:%S")
-#print("Current Time =", current_time)
 
 ser.write(str.encode(':SL' + str(current_time) + '#'))
 response = ser.readline()
@@ -71,7 +67,6 @@ today = date.today()
 
 # mm/dd/y
 d3 = today.strftime("%m/%d/%y")
-#print("Current Date =", d3)
 
 ser.write(str.encode(':SC' + str(d3) + '#'))
 response = ser.readline()
@@ -108,9 +103,6 @@ else: print('Could not set Home Point...')
 #////////////////////////////////////
 # Stop and exit
 #///////////////////////////////////
-
-#print('Stoping all motors...')
-#ser.write(str.encode(':Q#'))
 
 ser.close() 
 
