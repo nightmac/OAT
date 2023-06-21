@@ -166,42 +166,6 @@ if __name__ == '__main__':
         print("# settings")
         s.read()
         s.print()
-    def home():
-        # stop motors
-        sendCommandAndWait(f"Q")
-        # get status for first display
-        sendCommandAndWait(f"GX")
-        # set slew speed to M
-        sendCommandAndWait(f"RC")
-        # set speed
-        sendCommandAndWait(f"GCMS3")
-        # NOTE: re-check when the sensor was bent
-        # find RA home offset (just to be safe)
-        sendCommandAndWait(f"XSHR-1200")
-        # find RA home in 2 hours range
-        if True:
-            sendCommandAndWait(f"MHRR3")
-            while True:
-                res = status()
-                print(res)
-                if res == 'Tracking':
-                    break
-        # set slew speed to highest again
-        sendCommandAndWait(f"RS")
-        # move to 90 deg
-        sendCommandAndWait(f"MXd12900")
-        while True:
-            res = status()
-            print(res)
-            if res == 'Tracking':
-                break
-        # set home pos
-        sendCommandAndWait(f"SHP")
-        # stop motors
-        sendCommandAndWait(f"Q")
-        sendCommandAndWait(f"GX")
-        print("# homing done")
-    sendCommandAndWait(f"Q")
     def pa():
         pa.alignOnce()
     def calibrate():
@@ -213,8 +177,6 @@ if __name__ == '__main__':
             command = string.split()
             if command[0]  == '#sleep' and len(command) > 1:
                 time.sleep(int(command[1]))
-            if command[0]  == '#home':
-                home()
             if command[0]  == '#prefs':
                 print_settings()
             if command[0]  == '#cal':
