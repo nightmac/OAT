@@ -36,6 +36,9 @@ class OpenAstroClient(PyIndi.BaseClient):
     @debug.setter
     def debug(self, val):
         self._debug = val
+    def log(self,msg,end="\n"):
+        if self.debug:
+            print(msg,end=end)
     def sendCommand(self,cmd):
         self.meadeResultRead = False
         self.meadeProp[0].text = cmd
@@ -53,9 +56,6 @@ class OpenAstroClient(PyIndi.BaseClient):
             time.sleep(1)
         self.log(f"<< Received: {self.meadeResult.s} {self.meadeResult.tp.text}")
         return self.meadeResult.s,self.meadeResult.tp.text
-    def log(self,msg,end="\n"):
-        if self.debug:
-            print(msg,end=end)
     def newDevice(self, d):
         pass
     def newProperty(self, p):
@@ -130,9 +130,10 @@ class Settings:
         if(self.dec_lower):
             return
         res = sendCommandAndWait(f"XGDLL")[1]
-        res = res.split("|")
-        self.dec_lower = int(res[0])
-        self.dec_upper = int(res[1])
+        # res = res.split("|")
+        self.dec_lower = float(res)
+        res = sendCommandAndWait(f"XGDLU")[1]
+        self.dec_upper = float(res)
         self.ra_steps = float(sendCommandAndWait(f"XGR")[1])
         self.dec_steps = float(sendCommandAndWait(f"XGD")[1])
         self.dec_park = int(sendCommandAndWait(f"XGDP")[1])
@@ -186,4 +187,3 @@ if __name__ == '__main__':
         else:
             result = c.sendCommandAndWait(f":{string}#")
             print(f">> Result: {result}")
-
