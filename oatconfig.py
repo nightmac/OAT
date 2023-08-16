@@ -11,8 +11,8 @@ from datetime import datetime
 # otherwise OAT will forget time&date when KSTARS connects
 #/////////////////////////////////////////////////////
 
-serialport = "/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0"
-os.system('stty -F /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0 -hupcl')
+serialport = "/dev/ttyUSB0"
+os.system('stty -F /dev/ttyUSB0 -hupcl')
 
 #////////////////////////////////////
 # open serial port & check connection
@@ -31,18 +31,15 @@ if (response_utf) == ('') :
 
 else:  print(str(response_utf) + ' is online!') 
 
-
 #////////////////////////////////////
 # Set site coordinates
 #///////////////////////////////////
-
 
 ser.write(str.encode(':St38*34#'))
 ser.write(str.encode(':Sg+90*33#'))
 
 print("Home Site LAT is 38*34")     # Show your Home Latitude in DM (DegreesMinutes) format
 print("Home Site LONG is +90*33")    # Show your Home Longitude
-
 
 #////////////////////////////////////
 # Set Time
@@ -78,7 +75,6 @@ if int(response_set) == 1:
     print(str(response_strip) + ' done!') 
 else: print('Could not set site date...')
 
-
 #////////////////////////////////////
 # Set UTC Offset
 #///////////////////////////////////
@@ -98,7 +94,6 @@ response_utf = (response.decode('utf-8'))
 if int(response_utf) == 1:
     print('Done!')
 else: print('Could not set Home Point...')
-
 
 #////////////////////////////////////
 # Stop and exit
