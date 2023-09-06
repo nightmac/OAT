@@ -1,4 +1,3 @@
-
 import time, threading, io, sys
 import PyIndi
 import readline
@@ -10,7 +9,7 @@ from os.path import split
 cmdName = "Meade"
 
 class OpenAstroClient(PyIndi.BaseClient):
-    def __init__(self, hostname="astroberry.local", port=7624):
+    def __init__(self, hostname="opi.local", port=7624):
         super(OpenAstroClient, self).__init__()
         self.setServer(hostname,int(port))
         self.blobEvent=threading.Event()
@@ -187,3 +186,4 @@ if __name__ == '__main__':
         else:
             result = c.sendCommandAndWait(f":{string}#")
             print(f">> Result: {result}")
+
