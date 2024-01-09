@@ -79,7 +79,7 @@ else: print('Could not set site date...')
 # Set UTC Offset
 #///////////////////////////////////
 
-ser.write(str.encode(':SG+05#'))
+ser.write(str.encode(':SG+06#'))
 print('Site UTC offset successfully set to: +05')
 
 #////////////////////////////////////
