@@ -26,8 +26,6 @@
 // Using the NEMA 17, 1.8°/step stepper for RA
 #define RA_STEPPER_TYPE STEPPER_TYPE_ENABLE
 #define RA_STEPPER_SPR 200.0f
-
-// Using the TMC2209-UART driver for RA stepper motor
 #define RA_DRIVER_TYPE DRIVER_TYPE_TMC2209_UART
 
 // Define some RA stepper motor settings
@@ -46,7 +44,6 @@
   #define RA_SLEWING_SPEED_DEG          4.0  // deg/s
 #endif
 
-// Track immediately after boot
 #define TRACK_ON_BOOT 1
 
 // Define limits for RA... 
@@ -61,8 +58,6 @@
 // Using the NEMA 17, 1.8°/step stepper for DEC
 #define DEC_STEPPER_TYPE STEPPER_TYPE_ENABLE
 #define DEC_STEPPER_SPR 200.0f
-
-// Using the TMC2209-UART driver for DEC stepper
 #define DEC_DRIVER_TYPE DRIVER_TYPE_TMC2209_UART
 
 // Define some DEC stepper motor settings
@@ -81,25 +76,16 @@
   #define DEC_SLEWING_SPEED_DEG          4.0  // deg/s
 #endif
 
-// Define DEC limits
 #define DEC_LIMIT_UP   120 // degrees from Home
 #define DEC_LIMIT_DOWN 35 // degrees from Home
 
 
-////////////////////////////////
-// Display configuration 
-// Define the type of display we are using. Currently: No display
 #define DISPLAY_TYPE DISPLAY_TYPE_NONE
 
-////////////////////////////////
-// GPS Addon configuration 
-// Define whether we have the GPS addon or not. Currently: No GPS
 #define USE_GPS 0
 
-////////////////////////////////
-// Digital Level Addon configuration 
-// Define whether we have the Digital Level or not. Currently: No Digital Level
 #define USE_GYRO_LEVEL 0
+
 
 ////////////////////////////////
 // Focuser configuration 
@@ -108,8 +94,6 @@
 // Using the Modded 28BYJ-48 (Bipolar) stepper for FOC
 #define FOCUS_STEPPER_TYPE STEPPER_TYPE_ENABLE
 #define FOCUS_STEPPER_SPR 2048.0f
-
-// Using the TMC2209-UART driver for focuser stepper
 #define FOCUS_DRIVER_TYPE DRIVER_TYPE_TMC2209_UART
 
 // Define Focus stepper motor power settings
@@ -127,14 +111,11 @@
 // AutoPA Addon configuration 
 // Define whether we have the AutoPA add on or not. Currently: AutoPA is installed
 
-// Using AutoPA V2.0.
 #define AUTOPA_VERSION 2
 
 // Using the Modded 28BYJ-48 (Bipolar) stepper for AZ
 #define AZ_STEPPER_TYPE STEPPER_TYPE_ENABLED
 #define AZ_STEPPER_SPR 2048.0f
-
-// Using the TMC2209-UART driver for AZ stepper motor
 #define AZ_DRIVER_TYPE DRIVER_TYPE_TMC2209_UART
 
 // Define AZ stepper motor power settings
@@ -163,8 +144,6 @@
 // Using the Modded 28BYJ-48 (Bipolar) stepper for ALT
 #define ALT_STEPPER_TYPE STEPPER_TYPE_ENABLED
 #define ALT_STEPPER_SPR 2048.0f
-
-// Using the TMC2209-UART driver for ALT stepper motor
 #define ALT_DRIVER_TYPE DRIVER_TYPE_TMC2209_UART
 
 // Define ALT stepper motor power settings
@@ -177,11 +156,9 @@
 #define ALT_INVERT_DIR                0
 #define ALT_ALWAYS_ON                 0
 
-////////////////////////////////
-// Auto Homing addons
+#define DEW_HEATER 1
+
 #define USE_HALL_SENSOR_RA_AUTOHOME 0
 
-///////////////////////
-// Debug settings
 #define DEBUG_LEVEL (DEBUG_NONE)
 
