@@ -26,15 +26,15 @@
 #define RA_DRIVER_TYPE DRIVER_TYPE_TMC2209_UART
 
 // Define some RA stepper motor settings
-#define RA_MOTOR_CURRENT_RATING		1500 // mA
+#define RA_MOTOR_CURRENT_RATING	        1500 // mA
 #define RA_OPERATING_CURRENT_SETTING	70 // %
-#define RA_STEPPER_ACCELERATION		6000
-#define RA_STEPPER_SPEED 		1800
-#define RA_SLEW_MICROSTEPPING		16
-#define RA_TRACKING_MICROSTEPPING	256
-#define RA_INVERT_DIR 			1
-#define RA_PULLEY_TEETH 		16
-#define RA_UART_STEALTH_MODE      	0
+#define RA_STEPPER_ACCELERATION		    6000
+#define RA_STEPPER_SPEED 		        1800
+#define RA_SLEW_MICROSTEPPING		    16
+#define RA_TRACKING_MICROSTEPPING	    256
+#define RA_INVERT_DIR 			        1
+#define RA_PULLEY_TEETH 		        16
+#define RA_UART_STEALTH_MODE      	    0
 
 #ifdef NEW_STEPPER_LIB
   #define RA_SLEWING_ACCELERATION_DEG   6.0  // deg/s/s
@@ -57,15 +57,15 @@
 #define DEC_DRIVER_TYPE DRIVER_TYPE_TMC2209_UART
 
 // Define some DEC stepper motor settings
-#define DEC_MOTOR_CURRENT_RATING	1500 // mA
+#define DEC_MOTOR_CURRENT_RATING	    1500 // mA
 #define DEC_OPERATING_CURRENT_SETTING 	70 // %
-#define DEC_STEPPER_ACCELERATION	5000
-#define DEC_STEPPER_SPEED		1800
+#define DEC_STEPPER_ACCELERATION	    5000
+#define DEC_STEPPER_SPEED		        1800
 #define DEC_SLEW_MICROSTEPPING         	16
 #define DEC_GUIDE_MICROSTEPPING        	256
-#define DEC_INVERT_DIR  		0
-#define DEC_PULLEY_TEETH 		16
-#define DEC_UART_STEALTH_MODE     	0
+#define DEC_INVERT_DIR  		        0
+#define DEC_PULLEY_TEETH 		        16
+#define DEC_UART_STEALTH_MODE     	    0
 
 #ifdef NEW_STEPPER_LIB
   #define DEC_SLEWING_ACCELERATION_DEG   6.0  // degs/s/s
@@ -96,14 +96,14 @@
 #define FOCUS_DRIVER_TYPE DRIVER_TYPE_TMC2209_UART
 
 // Define Focus stepper motor power settings
-#define FOCUS_MOTOR_CURRENT_RATING	150 // mA
+#define FOCUS_MOTOR_CURRENT_RATING	    150 // mA
 #define FOCUS_OPERATING_CURRENT_SETTING	100 // %
-#define FOCUS_MICROSTEPPING		1 // steps
-#define FOCUSER_MOTOR_HOLD_SETTING	10 // %
-#define FOCUS_UART_STEALTH_MODE 	1 // silent?
-#define FOCUSER_ALWAYS_ON		0
-#define FOCUS_STEPPER_ACCELERATION 	600
-#define FOCUS_STEPPER_SPEED 		400
+#define FOCUS_MICROSTEPPING		        1 // steps
+#define FOCUSER_MOTOR_HOLD_SETTING    	10 // %
+#define FOCUS_UART_STEALTH_MODE 	    1 // silent?
+#define FOCUSER_ALWAYS_ON		        0
+#define FOCUS_STEPPER_ACCELERATION 	    600
+#define FOCUS_STEPPER_SPEED 		    400
 
 
 ////////////////////////////////
@@ -119,13 +119,13 @@
 
 // Define AZ stepper motor power settings
 #define AZ_MOTOR_CURRENT_RATING      	2000 // mA
-#define AZ_OPERATING_CURRENT_SETTING 	60 // %
+#define AZ_OPERATING_CURRENT_SETTING 	50 // %
 #define AZ_MICROSTEPPING             	16 // steps
 #define AZ_MOTOR_HOLD_SETTING       	10 // %
-#define AZ_STEPPER_SPEED		1000
-#define AZ_STEPPER_ACCELERATION		500
-#define AZ_INVERT_DIR 			0
-#define AZ_ALWAYS_ON 			1
+#define AZ_STEPPER_SPEED		        1000
+#define AZ_STEPPER_ACCELERATION		    500
+#define AZ_INVERT_DIR 			        0
+#define AZ_ALWAYS_ON 			        1
 
 
 ///////////////////////////////
@@ -153,8 +153,8 @@
 #define ALT_MOTOR_HOLD_SETTING        	10 // %
 #define ALT_STEPPER_SPEED             	2000
 #define ALT_STEPPER_ACCELERATION      	1000
-#define ALT_INVERT_DIR 			0
-#define ALT_ALWAYS_ON 			0
+#define ALT_INVERT_DIR 			        0
+#define ALT_ALWAYS_ON 		        	0
 
 #define DEW_HEATER 1
 
