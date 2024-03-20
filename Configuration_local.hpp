@@ -26,15 +26,15 @@
 #define RA_DRIVER_TYPE DRIVER_TYPE_TMC2209_UART
 
 // Define some RA stepper motor settings
-#define RA_MOTOR_CURRENT_RATING	        1500 // mA
-#define RA_OPERATING_CURRENT_SETTING	70 // %
-#define RA_STEPPER_ACCELERATION		    6000
-#define RA_STEPPER_SPEED 		        1800
-#define RA_SLEW_MICROSTEPPING		    16
-#define RA_TRACKING_MICROSTEPPING	    256
-#define RA_INVERT_DIR 			        1
-#define RA_PULLEY_TEETH 		        16
-#define RA_UART_STEALTH_MODE      	    0
+#define RA_MOTOR_CURRENT_RATING        1500 // mA
+#define RA_OPERATING_CURRENT_SETTING   70 // %
+#define RA_STEPPER_ACCELERATION		   6000
+#define RA_STEPPER_SPEED 		       1800
+#define RA_SLEW_MICROSTEPPING		   16
+#define RA_TRACKING_MICROSTEPPING	   256
+#define RA_INVERT_DIR 			       1
+#define RA_PULLEY_TEETH 		       16
+#define RA_UART_STEALTH_MODE      	   0
 
 #ifdef NEW_STEPPER_LIB
   #define RA_SLEWING_ACCELERATION_DEG   6.0  // deg/s/s
