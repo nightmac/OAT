@@ -28,7 +28,7 @@
 // Define some RA stepper motor settings
 #define RA_MOTOR_CURRENT_RATING        1500 // mA
 #define RA_OPERATING_CURRENT_SETTING   70 // %
-#define RA_STEPPER_ACCELERATION		   6000
+#define RA_STEPPER_ACCELERATION        6000
 #define RA_STEPPER_SPEED 		       1800
 #define RA_SLEW_MICROSTEPPING		   16
 #define RA_TRACKING_MICROSTEPPING	   256
