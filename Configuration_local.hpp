@@ -42,7 +42,7 @@
 #endif
 
 // Track immediately after boot
-#define TRACK_ON_BOOT 1
+#define TRACK_ON_BOOT 0
 
 // Define limits for RA... 
 #define RA_LIMIT_LEFT     5.5f
@@ -119,9 +119,9 @@
 
 // Define AZ stepper motor power settings
 #define AZ_MOTOR_CURRENT_RATING         2000 // mA
-#define AZ_OPERATING_CURRENT_SETTING    50 // %
+#define AZ_OPERATING_CURRENT_SETTING    60 // %
 #define AZ_MICROSTEPPING                16 // steps
-#define AZ_MOTOR_HOLD_SETTING           10 // %
+#define AZ_MOTOR_HOLD_SETTING           20 // %
 #define AZ_STEPPER_SPEED                1000
 #define AZ_STEPPER_ACCELERATION         500
 #define AZ_INVERT_DIR                   0
@@ -148,7 +148,7 @@
 
 // Define ALT stepper motor power settings
 #define ALT_MOTOR_CURRENT_RATING        2000 // mA
-#define ALT_OPERATING_CURRENT_SETTING   60 // %
+#define ALT_OPERATING_CURRENT_SETTING   70 // %
 #define ALT_MICROSTEPPING               16 // steps
 #define ALT_MOTOR_HOLD_SETTING          10 // %
 #define ALT_STEPPER_SPEED               2000
