@@ -37,8 +37,8 @@
 #define RA_UART_STEALTH_MODE           0
 
 #ifdef NEW_STEPPER_LIB
-  #define RA_SLEWING_ACCELERATION_DEG   6.0  // deg/s/s
-  #define RA_SLEWING_SPEED_DEG          6.0  // deg/s
+  #define RA_SLEWING_ACCELERATION_DEG  6.0  // deg/s/s
+  #define RA_SLEWING_SPEED_DEG         6.0  // deg/s
 #endif
 
 // Track immediately after boot
@@ -68,8 +68,8 @@
 #define DEC_UART_STEALTH_MODE           0
 
 #ifdef NEW_STEPPER_LIB
-  #define DEC_SLEWING_ACCELERATION_DEG   6.0  // degs/s/s
-  #define DEC_SLEWING_SPEED_DEG          6.0  // deg/s
+  #define DEC_SLEWING_ACCELERATION_DEG  6.0  // degs/s/s
+  #define DEC_SLEWING_SPEED_DEG         6.0  // deg/s
 #endif
 
 // Define DEC limits
@@ -88,23 +88,21 @@
 // Focuser configuration 
 // Define whether to support a focusing stepper motor on E1 or not. Currently: Focuser stepper
 
-// Using the Modded 28BYJ-48 (Bipolar) stepper for FOC
+// Using the NEMA 17, 1.8°/step stepper for FOC
 #define FOCUS_STEPPER_TYPE STEPPER_TYPE_ENABLE
-#define FOCUS_STEPPER_SPR 2048.0f
-
-// Using the TMC2209-UART driver for focuser stepper
+#define FOCUS_STEPPER_SPR 200.0f
 #define FOCUS_DRIVER_TYPE DRIVER_TYPE_TMC2209_UART
 
 // Define Focus stepper motor power settings
-#define FOCUS_MOTOR_CURRENT_RATING      150 // mA
-#define FOCUS_OPERATING_CURRENT_SETTING 100 // %
-#define FOCUS_MICROSTEPPING             1 // steps
+#define FOCUS_MOTOR_CURRENT_RATING      1000 // mA
+#define FOCUS_OPERATING_CURRENT_SETTING 70 // %
+#define FOCUS_MICROSTEPPING             8 // steps
 #define FOCUSER_MOTOR_HOLD_SETTING      10 // %
 #define FOCUS_UART_STEALTH_MODE         1 // silent?
-#define FOCUSER_ALWAYS_ON               0
-#define FOCUS_STEPPER_ACCELERATION      600
-#define FOCUS_STEPPER_SPEED             400
-
+#define FOCUSER_ALWAYS_ON               1
+#define FOCUS_STEPPER_ACCELERATION 	3000 
+#define FOCUS_STEPPER_SPEED 		1800 
+ 
 
 ////////////////////////////////
 // AutoPA Addon configuration 
@@ -137,8 +135,8 @@
 // #define AZIMUTH_STEPS_PER_REV   (AZ_CIRCUMFERENCE / AZ_ROD_PITCH * AZ_STEPPER_SPR * AZ_MICROSTEPPING)  // Steps needed to turn AZ 360deg
 
 // If you have a belt drive solution, you can uncomment and use the next 2 lines for calculations
-#define AZ_CIRCUMFERENCE        (725)  // the circumference of the circle where the movement is anchored
-#define AZ_PULLEY_TEETH         16
+//#define AZ_CIRCUMFERENCE        (725)  // the circumference of the circle where the movement is anchored
+//#define AZ_PULLEY_TEETH         16
 
 
 // Using the NEMA 17, 1.8°/step stepper for ALT
