@@ -78,9 +78,7 @@
 
 
 #define DISPLAY_TYPE DISPLAY_TYPE_NONE
-
 #define USE_GPS 0
-
 #define USE_GYRO_LEVEL 0
 
 
