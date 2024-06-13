@@ -93,13 +93,13 @@
 
 // Define Focus stepper motor power settings
 #define FOCUS_MOTOR_CURRENT_RATING      1000 // mA
-#define FOCUS_OPERATING_CURRENT_SETTING 70 // %
+#define FOCUS_OPERATING_CURRENT_SETTING 90 // %
 #define FOCUS_MICROSTEPPING             8 // steps
 #define FOCUSER_MOTOR_HOLD_SETTING      10 // %
 #define FOCUS_UART_STEALTH_MODE         1 // silent?
 #define FOCUSER_ALWAYS_ON               1
-#define FOCUS_STEPPER_ACCELERATION 	3000 
-#define FOCUS_STEPPER_SPEED 		1800 
+#define FOCUS_STEPPER_ACCELERATION 	    3000 
+#define FOCUS_STEPPER_SPEED 		    1800 
  
 
 ////////////////////////////////
