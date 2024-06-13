@@ -98,8 +98,8 @@
 #define FOCUSER_MOTOR_HOLD_SETTING      10 // %
 #define FOCUS_UART_STEALTH_MODE         1 // silent?
 #define FOCUSER_ALWAYS_ON               1
-#define FOCUS_STEPPER_ACCELERATION 	    3000 
-#define FOCUS_STEPPER_SPEED 		    1800 
+#define FOCUS_STEPPER_ACCELERATION      3000 
+#define FOCUS_STEPPER_SPEED             1800 
  
 
 ////////////////////////////////
