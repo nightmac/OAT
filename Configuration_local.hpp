@@ -30,7 +30,7 @@
 #define RA_OPERATING_CURRENT_SETTING   80 // %
 #define RA_STEPPER_ACCELERATION        6000
 #define RA_STEPPER_SPEED               1800
-#define RA_SLEW_MICROSTEPPING          16
+#define RA_SLEW_MICROSTEPPING          32
 #define RA_TRACKING_MICROSTEPPING      256
 #define RA_INVERT_DIR                  1
 #define RA_PULLEY_TEETH                16
@@ -61,7 +61,7 @@
 #define DEC_OPERATING_CURRENT_SETTING   80 // %
 #define DEC_STEPPER_ACCELERATION        5000
 #define DEC_STEPPER_SPEED               1800
-#define DEC_SLEW_MICROSTEPPING          16
+#define DEC_SLEW_MICROSTEPPING          32
 #define DEC_GUIDE_MICROSTEPPING         256
 #define DEC_INVERT_DIR                  0
 #define DEC_PULLEY_TEETH                16
@@ -134,7 +134,7 @@
 
 // If you have a belt drive solution, you can uncomment and use the next 2 lines for calculations
 //#define AZ_CIRCUMFERENCE        (725)  // the circumference of the circle where the movement is anchored
-//#define AZ_PULLEY_TEETH         16
+#define AZ_PULLEY_TEETH         16
 
 
 // Using the NEMA 17, 1.8°/step stepper for ALT
