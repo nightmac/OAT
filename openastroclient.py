@@ -17,7 +17,7 @@ hostname = "max.local"
 ra_steps = "1243.6 " # 1258.6
 dec_steps = "633.6 " # 628.3
 port = 7624
-#user = "max"
+#user = "orangepi"
 ssh_cmd = "ssh max"
 
 class OpenAstroClient(PyIndi.BaseClient):
