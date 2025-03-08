@@ -33,7 +33,7 @@
 #define RA_SLEW_MICROSTEPPING          32
 #define RA_TRACKING_MICROSTEPPING      256
 #define RA_INVERT_DIR                  1
-#define RA_PULLEY_TEETH                16
+#define RA_PULLEY_TEETH                12
 #define RA_UART_STEALTH_MODE           0
 
 #ifdef NEW_STEPPER_LIB
@@ -93,7 +93,7 @@
 
 // Define Focus stepper motor power settings
 #define FOCUS_MOTOR_CURRENT_RATING      1000 // mA
-#define FOCUS_OPERATING_CURRENT_SETTING 90 // %
+#define FOCUS_OPERATING_CURRENT_SETTING 80 // %
 #define FOCUS_MICROSTEPPING             8 // steps
 #define FOCUSER_MOTOR_HOLD_SETTING      10 // %
 #define FOCUS_UART_STEALTH_MODE         1 // silent?
