@@ -10,14 +10,15 @@ from util import exec
 
 cmdName = "Meade"
 telescopeName = "LX200 OpenAstroTech"
-dec_offset = 0
-ra_offset = 0
-hostname = "opi.local"
-ra_steps = "629.3"
-dec_steps = "314.2"
+dec_offset = 15964
+ra_offset = -2692
+hostname = "max.local"
+# hostname = "localhost"
+ra_steps = "1243.6 " # 1258.6
+dec_steps = "633.6 " # 628.3
 port = 7624
-#user = "orangepi"
-ssh_cmd = "ssh opi.local"
+#user = "max"
+ssh_cmd = "ssh max"
 
 class OpenAstroClient(PyIndi.BaseClient):
     def __init__(self, hostname=hostname, port=port):
@@ -191,16 +192,15 @@ if __name__ == '__main__':
         exec(f"{ssh_cmd} 'sudo shutdown now'")
     def xdf():
         print("# firmware display")
-        sendCommandAndWait("XFR")
-        sendCommandAndWait(f"XGHR{ra_offset}")
-        sendCommandAndWait(f"XGD{dec_steps}")
-        sendCommandAndWait(f"XGR{ra_steps}")
+        sendCommandAndWait(f"XGHR")
+        sendCommandAndWait(f"XGD")
+        sendCommandAndWait(f"XGR")
     def xfr():
         print("# firmware reset")
         sendCommandAndWait("XFR")
-        sendCommand(f"@XSHR{ra_offset}")
-        sendCommand(f"@XSD{dec_steps}")
-        sendCommand(f"@XSR{ra_steps}")
+        sendCommand(f":XSHR{ra_offset}#")
+        sendCommand(f":XSD{dec_steps}#")
+        sendCommand(f":XSR{ra_steps}#")
         print(f"XGD{sendCommandAndWait('XGD')[1]}\nXGR{sendCommandAndWait('XGR')[1]}")
     def reboot():
         print("# reboot")
@@ -221,13 +221,6 @@ if __name__ == '__main__':
     def pa():
         pa = autopa.AutoPA(c)
         pa.alignOnce()
-    def calibrate(cmd):
-        if cmd != '#cal':
-            ra = cmd.endswith("ra")
-            dec = cmd.endswith("dec")
-            cal.calibrate(ra=ra, dec=dec)
-        else:
-            cal.calibrate()
     while True:
         print(">> Command: ", end="")
         string = input()
@@ -237,6 +230,8 @@ if __name__ == '__main__':
             parts = string.split()
             cmd,args = (parts[0], parts[1:])
             if cmd == '#sleep':
+                time.sleep(int(args[0]))
+            if cmd == '#temp':
                 time.sleep(int(args[0]))
             if cmd == '#rest':
                 rest()
@@ -248,8 +243,6 @@ if __name__ == '__main__':
                 reboot()
             if cmd == '#prefs':
                 print_settings()
-            if cmd.startswith('#cal'):
-                calibrate(cmd)
             if cmd == '#pa':
                 pa()
         elif string[0] == '@':
